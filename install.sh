@@ -2,10 +2,10 @@
 # ================================================================
 #  NEKO SERVER DEPLOY v3 — вставь в консоль нового сервера:
 #
-#  bash <(curl -sL https://raw.githubusercontent.com/Afonya876/neko-backup/main/install.sh)
+#  bash <(curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/install.sh)
 # ================================================================
 set -e
-REPO_RAW="https://raw.githubusercontent.com/Afonya876/neko-backup/main"
+REPO_RAW="https://raw.githubusercontent.com/Afonya876/backup/main"
 CURL="curl -sL"
 [ -n "$GH_TOKEN" ] && CURL="curl -sL -H \"Authorization: token $GH_TOKEN\""
 BASE="/root"
