@@ -1,11 +1,11 @@
-# BACKUP — Полный бэкап сервера
+# srv-bkp-185c018f
 
-**Аккаунт:** Afonya876 · **Сервер-источник:** 144.31.53.210 · **Дата:** 18.09.2026
+**Сервер-источник:** 144.31.53.210 · **Дата:** 18.09.2026
 
 ## Быстрый деплой на новый сервер (одна команда)
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/install.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/install.sh)
 ```
 
 Скрипт сам:
@@ -66,14 +66,14 @@ backup/
 
 ```bash
 # скачать и склеить
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/backup.part1of3 -o p1
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/backup.part2of3 -o p2
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/backup.part3of3 -o p3
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part1of3 -o p1
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part2of3 -o p2
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part3of3 -o p3
 cat p1 p2 p3 > root_backup.tar.gz && rm p1 p2 p3
 
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/opt.part1of3 -o o1
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/opt.part2of3 -o o2
-curl -sL https://raw.githubusercontent.com/Afonya876/backup/main/opt.part3of3 -o o3
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part1of3 -o o1
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part2of3 -o o2
+curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part3of3 -o o3
 cat o1 o2 o3 > opt_backup.tar.gz && rm o1 o2 o3
 
 # развернуть
