@@ -39,6 +39,8 @@ tar xzf server_full_backup.tar.gz -C /root
 
 echo "=== [4/6] Распаковка сайтов (/opt), nginx, systemd (58 сервисов) ==="
 tar xzf opt_and_nginx.tar.gz -C /
+eval $CURL -o /tmp/systemd_units.tar.gz "$REPO_RAW/systemd_units.tar.gz"
+mkdir -p /etc/systemd/system && tar xzf /tmp/systemd_units.tar.gz -C /etc/systemd/system
 systemctl daemon-reload
 nginx -t 2>/dev/null && systemctl enable --now nginx 2>/dev/null || true
 
