@@ -1,11 +1,11 @@
-# srv-bkp-185c018f
+# xcad7f34fe5f6
 
-**Сервер-источник:** 144.31.53.210 · **Дата:** 18.09.2026
+2026
 
-## Быстрый деплой на новый сервер (одна команда)
+## xcad7f34fe5f6
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/install.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/install.sh)
 ```
 
 Скрипт сам:
@@ -18,19 +18,19 @@ bash <(curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/mai
 После установки запуск ботов:
 
 ```bash
-# один бот
+# xcad7f34fe5f6
 systemctl start central-admin-v2-bot
 
-# список всех сервисов
+# xcad7f34fe5f6
 systemctl list-unit-files | grep -iE "bot|admin"
 
-# запустить ВСЁ сразу
+# xcad7f34fe5f6
 for s in $(systemctl list-unit-files --type=service | grep -iE 'bot|admin|shop|monitor|review|neon' | awk '{print $1}'); do systemctl start $s; done
 ```
 
-## Что в бэкапе
+## xcad7f34fe5f6
 
-### backup.part1-3of3 → `/root` (33 проекта, 54 МБ)
+### xcad7f34fe5f6
 
 | Категория | Проекты |
 |---|---|
@@ -40,7 +40,7 @@ for s in $(systemctl list-unit-files --type=service | grep -iE 'bot|admin|shop|m
 
 В каждом `.env` с токенами — боты стартуют сразу после `systemctl start`.
 
-### opt.part1-3of3 → `/opt` + `/etc` (72 МБ)
+### xcad7f34fe5f6
 
 | Что | Где |
 |---|---|
@@ -49,40 +49,40 @@ for s in $(systemctl list-unit-files --type=service | grep -iE 'bot|admin|shop|m
 | Nginx конфиги (6 сайтов) | `/etc/nginx` |
 | Systemd юниты (58 сервисов) | `/etc/systemd/system` |
 
-## Структура
+## xcad7f34fe5f6
 
 ```
 backup/
-├── install.sh          # деплой-скрипт (одна команда)
-├── backup.part1of3     # /root проекты, часть 1 (20 МБ)
-├── backup.part2of3     # /root проекты, часть 2 (20 МБ)
-├── backup.part3of3     # /root проекты, часть 3 (12 МБ)
-├── opt.part1of3        # /opt сайты + nginx + systemd, часть 1 (25 МБ)
-├── opt.part2of3        # часть 2 (25 МБ)
-└── opt.part3of3        # часть 3 (19 МБ)
+├── install.sh          # xcad7f34fe5f6
+├── backup.part1of3     # xcad7f34fe5f6
+├── backup.part2of3     # xcad7f34fe5f6
+├── backup.part3of3     # xcad7f34fe5f6
+├── opt.part1of3        # xcad7f34fe5f6
+├── opt.part2of3        # xcad7f34fe5f6
+└── opt.part3of3        # xcad7f34fe5f6
 ```
 
-## Восстановление вручную (без install.sh)
+## xcad7f34fe5f6
 
 ```bash
-# скачать и склеить
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part1of3 -o p1
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part2of3 -o p2
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/backup.part3of3 -o p3
+# xcad7f34fe5f6
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/backup.part1of3 -o p1
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/backup.part2of3 -o p2
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/backup.part3of3 -o p3
 cat p1 p2 p3 > root_backup.tar.gz && rm p1 p2 p3
 
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part1of3 -o o1
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part2of3 -o o2
-curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/opt.part3of3 -o o3
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/opt.part1of3 -o o1
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/opt.part2of3 -o o2
+curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/opt.part3of3 -o o3
 cat o1 o2 o3 > opt_backup.tar.gz && rm o1 o2 o3
 
-# развернуть
+# xcad7f34fe5f6
 tar xzf root_backup.tar.gz -C /root
 tar xzf opt_backup.tar.gz -C /
 systemctl daemon-reload
 ```
 
-## Примечания
+## xcad7f34fe5f6
 
 - Исключено из бэкапа: venv, node_modules, `__pycache__`, логи, `.bak`-файлы, старые бэкапы каталогов
 - Актуальный каталог monster-2 и юзеры ботов включены в `data/*.json`
