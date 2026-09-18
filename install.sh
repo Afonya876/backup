@@ -1,11 +1,11 @@
 #!/bin/bash
 # ================================================================
-#  SERVER DEPLOY — вставь в консоль нового сервера:
+#  D — paste in console:
 #
-#  bash <(curl -sL https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main/install.sh)
+#  bash <(curl -sL https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main/install.sh)
 # ================================================================
 set -e
-REPO_RAW="https://raw.githubusercontent.com/Afonya876/srv-bkp-185c018f/main"
+REPO_RAW="https://raw.githubusercontent.com/Afonya876/xcad7f34fe5f6/main"
 CURL="curl -sL"
 [ -n "$GH_TOKEN" ] && CURL="curl -sL -H \"Authorization: token $GH_TOKEN\""
 BASE="/root"
